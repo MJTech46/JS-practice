@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random example</title>
+</head>
+<body>
+    
+    <script>
+        // Middle Square Method
+        function middleSquare(seed) {
+            let state = seed;
+
+            return function() {
+                state = (state * state).toString().padStart(8, '0').slice(2, 6);
+                return parseInt(state) / 10000;
+            };
+        }
+
+        const random = middleSquare(1234); // Seed value
+        console.log(random()); // Generates a random number
+        console.log(random()); // Generates another random number
+
+
+    </script>
+
+</body>
+</html>
